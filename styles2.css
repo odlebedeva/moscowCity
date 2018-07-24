@@ -1,0 +1,532 @@
+﻿/* reset browser styles */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ font-size: 100%;
+ vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+ display: block;
+}
+body {
+ line-height: 1.2;
+}
+table {
+ border-collapse: collapse;
+ border-spacing: 0;
+} 
+ol { 
+ padding-left: 1.4em;
+ list-style: decimal;
+}
+ul {
+ padding-left: 1.4em;
+ list-style: square;
+}
+blockquote, q {
+ quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+ content: '';
+ content: none;
+}
+/* end reset browser styles */
+@font-face {
+ font-family: 'PTSans';
+ src: url('fonts/PTSansBold.eot');
+ src: url('fonts/PTSansBold.eot?#iefix') format('embedded-opentype'),
+	  url('fonts/PTSansBold.woff') format('woff'),
+	  url('fonts/PTSansBold.ttf') format('truetype'),
+	  url('fonts/PTSansBold.svg') format('svg');
+ font-weight: bold;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'josefinsans';
+ src: url('fonts/josefinsans-italic.eot');
+ src: url('fonts/josefinsans-italic.eot?#iefix') format('embedded-opentype'),
+	  url('fonts/josefinsans-italic.woff') format('woff'),
+	  url('fonts/josefinsans-italic.ttf') format('truetype'),
+	  url('fonts/josefinsans-italic.svg') format('svg');
+ font-weight: normal;
+ font-style: italic;
+}
+@font-face {
+ font-family: 'opensans';
+ src: url('fonts/opensans-semibold.eot');
+ src: url('fonts/opensans-semibold.eot?#iefix') format('embedded-opentype'),
+	  url('fonts/opensans-semibold.woff') format('woff'),
+	  url('fonts/opensans-semibold.ttf') format('truetype'),
+	  url('fonts/opensans-semibold.svg') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+html {
+ background-image: url(image/moscow4.png);
+ background-repeat: no-repeat;
+ background-position: left top;
+ background-attachment: fixed;
+ background-size: cover;
+}
+body {
+ background-color: #FFFFFF;
+ width: 80%;
+ margin: 0 10% 0 10%;
+}
+/*----------------------------------начало оформления шапки страницы--------------------------------*/
+header {
+ width: 100%;
+ padding: 0.5% 2% 2% 2%;
+ float: left;
+ box-sizing: border-box;
+}
+.language {
+ text-align: right;
+ padding-bottom: 0.5%;
+}
+.language a {
+ text-decoration: none;
+ color: rgb(19,101,159);
+}
+.language a:hover {
+ text-decoration: underline rgb(19,101,159);
+}
+.language img {
+ margin-bottom: -4px;
+}
+figure {
+ width: 20%;
+ float: left;
+ box-sizing: border-box;
+}
+figure img {
+ float: left;
+ padding-right: 5%;
+}
+figure figcaption {
+ font-family: PTSans, Arial, sans-serif;
+ font-size: 20px;
+ /*color: #339999;*/
+ color: rgb(19,101,159);
+}
+.city {
+ letter-spacing: 24px;
+}
+header p {
+ box-sizing: border-box;
+ padding: 0 2% 0 10%; /* отодвинуть надпись "Выше" от логотипа*/
+ font-family: josefinsans;
+ font-style: italic;
+ font-size: 40px;
+ /*color:#339999;*/
+ color: rgb(19,101,159);
+ float: left;
+ width: 50%;
+}
+header .englishhead {
+ box-sizing: border-box;
+ padding: 0 2% 0 18%; /* отодвинуть надпись "Выше" от логотипа*/
+ font-family: josefinsans;
+ font-style: italic;
+ font-size: 40px;
+ /*color:#339999;*/
+ color: rgb(19,101,159);
+ float: left;
+ width: 50%;
+}
+nav {
+ margin: 0;
+ padding-left: 4%;
+ box-sizing: border-box;
+ width: 30%;
+ float: right;
+}
+nav ul {
+ list-style:none;
+}
+nav > ul > li {
+ width: 250px;
+ float: left;
+ position: relative;
+ padding: 0 1% 0 0;
+}
+nav li a {
+ display: block;
+ /*background-color: rgb(51,153,153);
+ border: 1px solid rgb(51,153,153);*/
+ background-color: rgb(19,101,159);
+ border: 1px solid rgb(19,101,159);
+ opacity: 0.9;
+ border-radius: 20px;
+ color: #FFFFFF;
+ padding: 9px 15px 9px 15px;
+ text-align: center;
+ text-decoration: none;
+ font-family: Titillium, Arial, sans-serif;
+ font-weight: bold;
+ text-shadow: 2px 2px 4px rgba(0,0,0,1);
+ text-transform:uppercase;
+ font-size: 1em;
+ letter-spacing: .2em;
+}
+nav li a:hover {
+ background: #33CCCC;
+}
+nav li .second {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: -22px;
+}
+nav li:hover .second {
+ display: block;
+}
+nav li li {
+ width: 250px;
+ padding: 0 0 1% 0;
+}
+/*-----------------------------------конец оформления шапки страницы-----------------------------------------*/
+/*-------------------------------начало оформления слайдера-----------------------------------------------------*/
+/* Slideshow container */
+.slideshow-container {
+  max-width: 277px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 18px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: rgb(19,101,159);/*#717171;*/
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/*------------------------------конец оформления слайдера----------------------------------------------*/
+/*----------------------------------footer--------------------------------------------------------- */
+.description {
+ font-family: PTSans, Arial, sans-serif;
+ font-size: 20px;
+ color: #000000;
+ width: 90%;
+ margin: 0 5% 2% 5%;
+}
+.description span {
+ color: rgb(19,101,159);
+ font-weight: bold;
+}
+footer p {
+ font-family: Titillium, Arial, sans-serif;
+ font-size: 16px;
+ letter-spacing: 2px;
+ text-align: right;
+ padding-right: 2%;
+ clear: left; /* стилизуемый элемент не должен обтекать плавающий элемент*/
+}
+/*-------------------------------------end footer---------------------------------------*/
+/*------------------------------------about towers-------------------------------------------*/
+.tower {
+ width: 100%;
+ height: 490px;
+ background-color:rgb(19,101,159);/*rgb(153,204,204);#339999 ;#13659f;#0099CC;*/
+ padding: 0px;
+ float: left;
+}
+.tower-img {
+ width: 70%;
+ float: left;
+}
+.tower-detail {
+ width: 30%;
+ float: left;
+}
+.tower-detail p {
+ font-family: PTSans, Arial, sans-serif;
+ color: #FFFFFF;
+ font-size: 36px;
+ text-align: center;
+ padding: 1% 0 10% 0;
+}
+.tower-detail > ul {
+ font-family: "opensans", Arial, sans-serif;
+ color: #FFFFFF;
+ font-size: 16px;
+}
+.tower-detail > ul > li {
+ padding-bottom: 1%;
+}
+.tower-description, .tabcontent { 
+ /*font-family: PTSans, Arial, sans-serif;
+ font-family: Comic Sans MS, Comic Sans, cursive;*/
+ font-family: Courier New, monospace;
+ font-size: 18px;
+ color: #000000;
+ padding:1%;
+ float: left;
+}
+.map {
+ width: 95%;
+ padding: 0px;
+ padding-bottom: 1%;
+ float: left;
+}
+.listtower {
+ /*width: 90%;
+ float: left;
+ margin: 0 5% 1% 5%;
+ background-color: rgba(19,101,159, .4);/*rgba(51,153,153, .4);
+ background: url(image/footer3.jpeg) 0% 50% no-repeat;
+ background-size: cover;
+ border-radius: 20px;*/
+ width:100%;
+ float: left;
+ border-top: 2px dotted rgb(19,101,159);
+ padding-bottom: 1%;
+ padding-top: 1%;
+}
+ul.listtowerleft, ul.listtowercenter, ul.listtowerright{
+ /*list-style:none;
+ background: url(image/icons9.png) no-repeat;*/
+ font-family: Courier New, monospace;
+}
+ul.listtowerleft li, ul.listtowercenter li, ul.listtowerright li {
+ list-style: none;
+ background: url(image/icons9.png) no-repeat;
+ background-size: 15px;
+ padding-left: 20px;
+}
+.listtowerleft, .listtowercenter, .listtowerright{
+ float: left;
+ margin: 0 5% 0 5%;
+ width: 20%;
+ font-weight: bold;
+}
+.listtower a {
+  text-decoration: none;
+  color: #000000;
+}
+.listtower a:hover {
+ text-decoration: underline;
+}
+.listtower a:active {
+ color: #0000FF;
+}
+.listtower a:visited {
+ color: #800080;
+}
+/*------------------------------------end of towers-------------------------------------------*/
+/*------------------------------------button "UP"-------------------------------------------*/
+.scrollup{
+ width:51px;
+ height:51px;
+ position:fixed;
+ bottom: 3%;
+ right: 5%;
+ display:none;
+ /*text-indent:-9999px;*/
+ text-indent: 100%; /*убрать текст с кнопки из ссылки */
+ white-space: nowrap;
+ overflow: hidden;
+ background: url('image/icons13.png') no-repeat;
+}
+/*------------------------------------button "UP"-------------------------------------------*/
+/*------------------------------------start History page-------------------------------------------*/
+/* Style the tab */
+.tab {
+ overflow: hidden;
+ border: 1px solid rgb(19,101,159);
+ background-color: #f1f1f1;/* rgb(19,101,159)*/
+}
+/* Style the buttons inside the tab */
+.tab button {
+ background-color: inherit;
+ float: left;
+ border: none;
+ outline: none;
+ cursor: pointer;
+ padding: 14px 16px;
+ transition: 0.3s;
+ font-size: 17px;
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+ background-color: #ddd;
+}
+/* Create an active/current tablink class */
+.tab button.active {
+ background-color: #ccc;
+}
+/* Style the tab content */
+.tabcontent {
+ display: none;
+ padding: 6px 12px;
+ border: 1px solid #ccc;
+ border-top: none;
+}
+.tabcontent p {
+color: rgb(19,101,159);
+font-weight: bold;
+text-align: center;
+}
+
+ /* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+} 
+/*------------------------------------end History page-------------------------------------------*/

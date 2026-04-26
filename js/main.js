@@ -1,32 +1,56 @@
-/*----------------------------------начало кнопки "наверх страницы"----------------------------------*/
-$(document).ready(function(){ //читаем документ
- $(window).scroll(function(){  //считываем данные скролла в окне
-  if($(this).scrollTop() > 120) {  //если скролл больше 120, то отображаем кнопку "наверх"
-   $('.scrollup').fadeIn();
-  } else {
-   $('.scrollup').fadeOut(); //иначе скрываем ее
-  }
- });
- $('.scrollup').click(function(){ //по нажатию на кнопку "наверх"
-  $("html, body").animate({ scrollTop: 0 }, 600); //плавно переходим вверх страницы
-  return false;
- });
+// Р—Р°РіСЂСѓР·РєР° РѕР±С‰РёС… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ
+$(document).ready(function() {
+    console.log('main.js Р·Р°РіСЂСѓР¶РµРЅ');
+
+    // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕРїСЂРµРґРµР»РµРЅРёСЏ РїСЂР°РІРёР»СЊРЅРѕРіРѕ РїСѓС‚Рё
+    function getBasePath() {
+        var path = window.location.pathname;
+        var depth = (path.match(/\//g) || []).length;
+
+        if (path.includes('/tower/ru/')) {
+            return '../../';
+        }
+        else if (path.includes('/tower/')) {
+            return '../';
+        }
+        // Р”Р»СЏ СЃС‚СЂР°РЅРёС† РІ РєРѕСЂРЅРµ
+        return '';
+    }
+
+    var basePath = getBasePath();
+    console.log('Base path:', basePath);
+
+    // Р—Р°РіСЂСѓР¶Р°РµРј header
+    $('#header-placeholder').load(basePath + 'components/header.html', function(response, status) {
+        console.log('Header Р·Р°РіСЂСѓР·РєР°:', status);
+        if (status === 'error') {
+            $('#header-placeholder').html('<header class="main-header" style="background:#000; padding:1rem;"><p style="color:white;">Header РІСЂРµРјРµРЅРЅРѕ РЅРµРґРѕСЃС‚СѓРїРµРЅ</p></header>');
+        }
+    });
+
+    // Р—Р°РіСЂСѓР¶Р°РµРј footer
+    $('#footer-placeholder').load(basePath + 'components/footer.html', function(response, status) {
+        console.log('Footer Р·Р°РіСЂСѓР·РєР°:', status);
+        if (status === 'error') {
+            $('#footer-placeholder').html('<footer class="main-footer" style="background:#1a1a2e; padding:2rem;"><p>РњРѕСЃРєРІР°-РЎРёС‚Рё</p></footer>');
+        }
+    });
+
+    // Р—Р°РіСЂСѓР¶Р°РµРј other_towers
+        $('#other-towers').load(basePath + 'components/other_towers.html', function(response, status) {
+            console.log('Other-towers Р·Р°РіСЂСѓР·РєР°:', status);
+            if (status === 'error') {
+                $('#other-towers').html('<div class="other-towers"><p style="color:white;">Р”СЂСѓРіРёРµ Р±Р°С€РЅРё РІСЂРµРјРµРЅРЅРѕ РЅРµРґРѕСЃС‚СѓРїРЅС‹</p></div>');
+            }
+        });
+
+    // РљРЅРѕРїРєР° "РќР°РІРµСЂС…"
+    $('#scrollup').click(function() {
+        $('html, body').animate({scrollTop: 0}, 500);
+        return false;
+    });
+
+    $(window).scroll(function() {
+        $('#scrollup').fadeTo('slow', $(this).scrollTop() > 200 ? 1 : 0);
+    });
 });
-/*----------------------------------конец кнопки "наверх страницы"----------------------------------*/
-
-/*----------------------------------начало tabs (вкладки истории)----------------------------------*/
-function openInfo(evt, infoName) {
- var i, tabcontent, tablinks;
- tabcontent = document.getElementsByClassName("tabcontent"); //скрытие текста каждого блока div
- for (i = 0; i < tabcontent.length; i++) {
-  tabcontent[i].style.display = "none";
- }
- tablinks = document.getElementsByClassName("tablinks");
- for (i = 0; i < tablinks.length; i++) {
-  tablinks[i].className = tablinks[i].className.replace(" active", "");
- }
- document.getElementById(infoName).style.display = "block";
- evt.currentTarget.className += " active";
-}
-/*----------------------------------конец tabs (вкладки истории)----------------------------------*/
-

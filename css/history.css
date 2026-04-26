@@ -1,0 +1,203 @@
+/* ========== СТИЛИ ДЛЯ СТРАНИЦЫ ИСТОРИИ ========== */
+
+/* Вкладки */
+.tab {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.tablinks {
+    background: rgba(0, 51, 255, 0.2);
+    border: 1px solid rgba(0, 51, 255, 0.3);
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s;
+    color: white;
+}
+
+.tablinks:hover {
+    background: rgba(0, 51, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.tablinks.active {
+    background: #0033FF;
+    border-color: #0033FF;
+    box-shadow: 0 5px 15px rgba(0, 51, 255, 0.3);
+}
+
+/* Контент вкладок */
+.tabcontent {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Текст истории */
+.history-text {
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.history-text p {
+    margin-bottom: 1.5rem;
+}
+
+/* Исторические изображения */
+.history-image {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.history-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Секции проектов */
+.project-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 3px solid #0033FF;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-section:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0, 51, 255, 0.1);
+}
+
+.project-section h3 {
+    color: #0033FF;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Сетка изображений */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 51, 255, 0.3);
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    animation: zoomIn 0.3s;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#modalCaption {
+    margin: 15px auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 1001;
+}
+
+.close:hover {
+    color: #0033FF;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .tab {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tablinks {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+    
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .image-grid img {
+        height: 250px;
+    }
+    
+    .project-section h3 {
+        font-size: 1.1rem;
+        flex-wrap: wrap;
+    }
+}

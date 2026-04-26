@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Москва-Сити — полный обзор башен и небоскребов Московского международного делового центра. Фотографии, история, интерактивный слайдер.">
+    <meta name="keywords" content="Москва-Сити, башни, небоскребы, ММДЦ, Федерация, ОКО, Эволюция">
+    <meta name="author" content="Olga Lebedeva">
+    <meta name="theme-color" content="#0033FF">
+    <title>Москва-Сити | Башни и небоскребы ММДЦ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+<!-- Место для header -->
+<div id="header-placeholder"></div>
+
+<main>
+    <section class="slideshow-section" aria-label="Галерея башен Москва-Сити">
+        <div class="slideshow-container" id="slideshow-container">
+            <div class="slides-wrapper" id="slides-wrapper"></div>
+            <button class="slide-nav prev" id="prevSlide" aria-label="Предыдущий слайд">❮</button>
+            <button class="slide-nav next" id="nextSlide" aria-label="Следующий слайд">❯</button>
+            <div class="dots-container" id="dotsContainer"></div>
+            <div class="autoplay-progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="description-container">
+        <p class="description">
+            <span class="description-highlight">МОЯ МОСКВА-СИТИ</span><br>
+            Проект "Моя Москва-Сити" — общественная инициатива, призванная построить социальную
+            инфраструктуру вокруг Московского Международного Делового Центра.
+        </p>
+    </div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<div id="footer-placeholder"></div>
+
+<!-- Подключаем JS слайдера -->
+<script src="js/slideshow.js"></script>
+</body>
+</html>
